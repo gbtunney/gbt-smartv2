@@ -19,6 +19,14 @@ const CONFIG_OBJ = [
                 export_types: ['default', 'import', 'require', 'types'],
                 library_name: 'gbtBoilerplate',
             },
+            {
+                export_key: 'settings',
+                export_types: ['require'],
+                library_name: 'nodeRedSettings',
+                overrides: {
+                    exports: 'default',
+                },
+            },
         ],
         rollup.DEFAULT_PLUGINS_BUNDLED,
         pkg,

@@ -1,0 +1,100 @@
+[
+    {
+        "id": "2a09b151d80134a8",
+        "type": "tab",
+        "label": "Test flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cf55ccef154b28e6",
+        "type": "change",
+        "z": "2a09b151d80134a8",
+        "name": "DotNode",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 120,
+        "wires": [["d1401f20d642cb8b"]]
+    },
+    {
+        "id": "d1401f20d642cb8b",
+        "type": "debug",
+        "z": "2a09b151d80134a8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5a829353996fb2bc",
+        "type": "inject",
+        "z": "2a09b151d80134a8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "INPUT B",
+        "payloadType": "str",
+        "x": 140,
+        "y": 180,
+        "wires": [["cf55ccef154b28e6"]]
+    },
+    {
+        "id": "55dcfdca9ade8edf",
+        "type": "inject",
+        "z": "2a09b151d80134a8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "INPUT A",
+        "payloadType": "str",
+        "x": 140,
+        "y": 80,
+        "wires": [["cf55ccef154b28e6"]]
+    }
+]

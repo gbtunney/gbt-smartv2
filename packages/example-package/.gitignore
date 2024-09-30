@@ -153,6 +153,9 @@ dist
 
 # Allowed javascript source files
 !eslint.config.js
+!environment.d.ts
+
+*.backup
 
 # Scratch Files
 scratch

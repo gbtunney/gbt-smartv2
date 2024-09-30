@@ -1,11 +1,16 @@
 {
     "extends": "@snailicide/build-config/tsconfig-base",
     "compilerOptions": {
-        "outDir": "./../types" /* Specify an output folder for all emitted files. */,
+        "target": "ES2018",
+        "module": "commonjs",
+        "lib": ["es2018", "esnext.asynciterable", "dom"],
+        "moduleResolution": "node",
+
         // Output settings.
         "rootDir": "./",
         "types": ["node"],
-        "declarationDir": "./../types"
+        "declarationDir": "./../types",
+        "outDir": "./../types" /* Specify an output folder for all emitted files. */
     },
     "include": ["**/*.ts", "**/*.cts", "**/*.mts"]
 }
