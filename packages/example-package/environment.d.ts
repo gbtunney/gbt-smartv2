@@ -1,4 +1,4 @@
-declare var process : {
+declare var process: {
     env: {
         ROLLUP_WATCH: boolean
     }

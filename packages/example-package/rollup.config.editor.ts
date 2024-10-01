@@ -1,8 +1,5 @@
 import { glob } from 'glob'
-import {
-    Plugin,
-    PreRenderedChunk,
-} from 'rollup'
+import { Plugin, PreRenderedChunk } from 'rollup'
 import type {
     LiteralToPrimitiveDeep,
     Merge,
@@ -21,12 +18,39 @@ type NodeRed = {
 type NodeRedPackage = Merge<LiteralToPrimitiveDeep<PackageJson>, NodeRed>
 const _pkg: ReadonlyDeep<typeof packageJson> = packageJson
 
-const pkg: NodeRedPackage = packageJson
+export const nodeRedPkg: NodeRedPackage = packageJson
 
 const allNodeTypes: Array<string> =
-    pkg['node-red'] && pkg['node-red'].nodes ? Object.keys(pkg['node-red']) : []
+    nodeRedPkg['node-red'] && nodeRedPkg['node-red'].nodes
+        ? Object.keys(nodeRedPkg['node-red'])
+        : []
 
 /*
+const htmlBundle = () => {
+  return {
+    name: "htmlBundle",
+    renderChunk(code, chunk, _options) {
+      const editorDir = path.dirname(chunk.facadeModuleId);
+      const htmlFiles = glob.sync(path.join(editorDir, "*.html"));
+      const htmlContents = htmlFiles.map((fPath) => fs.readFileSync(fPath));
+console.log(
+    "HTML CONTENTS:::",htmlFiles,htmlContents
+)
+      code =
+        '<script type="text/javascript">\n' +
+        code +
+        "\n" +
+        "</script>\n" +
+        htmlContents.join("\n");
+
+      return {
+        code,
+        map: { mappings: "" },
+      };
+    },
+  };
+};
+56
 "node-red": {
     "nodes": {
       "transform-text": "./dist/nodes/transform-text/transform-text.js"
@@ -46,7 +70,7 @@ const allNodeTypes: Array<string> =
 
 //export default function PluginVue(userOptions: Partial<Options> = {}): Plugin {
 
-const htmlBundle = () => {
+export const htmlBundle = (): Plugin => {
     const _plugin: Plugin = {
         name: 'htmlBundle',
         renderChunk(code: string, chunk: PreRenderedChunk) {
@@ -63,6 +87,7 @@ const htmlBundle = () => {
                     '\n' +
                     '</script>\n' +
                     htmlContents.join('\n')
+                console.log(`THE HTMLENTRY IS:::::${code}`)
 
                 return {
                     code,
@@ -89,7 +114,7 @@ const makePlugins = (nodeType: string) => [
     tsconfig: false,
     noEmitOnError: process.env.ROLLUP_WATCH ? false : true,
   }),*/
-    htmlBundle(),
+    // htmlBundle(),
 ]
 
 const makeConfigItem = (nodeType: string) => ({

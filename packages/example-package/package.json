@@ -3,12 +3,19 @@
     "version": "0.0.0",
     "private": false,
     "description": "Boilerplate for a new package",
+    "node-red": {
+        "nodes": {
+            "transform-text": "./dist/nodes/transform-text/transform-text.js"
+        }
+    },
     "scripts": {
         "ui": "pnpm exec node-red -s ./dist/settings.cjs -u ./config",
         "\n========== BUILD >> ==========": "",
         "build": "pnpm build:ts && pnpm build:rollup",
         "build:rollup": "rollup --config ./rollup.config.js",
         "build:ts": "pnpm exec tsc --build",
+        "\n========== DEVELOPMENT >> ==========": "",
+        "dev": "pnpm build:ts --watch",
         "\n========== CLEAN >> ==========": "",
         "clean": "pnpm clean:ts",
         "clean:ts": "pnpm exec tsc --build --clean",
@@ -67,6 +74,7 @@
     ],
     "devDependencies": {
         "@snailicide/build-config": "^1.3.0",
+        "@snailicide/g-library": "^1.1.0",
         "@types/glob": "^8.1.0",
         "@types/node": "^22.7.3",
         "@types/node-red": "^1.3.5",

@@ -2,10 +2,10 @@
     "extends": "@snailicide/build-config/tsconfig-base",
     "compilerOptions": {
         "target": "ES2018",
-        "module": "commonjs",
+        "module": "ESNext",
         "lib": ["es2018", "esnext.asynciterable", "dom"],
-        "moduleResolution": "node",
-
+        //  "moduleResolution": "node",
+        "isolatedModules": true,
         // Output settings.
         "rootDir": "./",
         "types": ["node"],
