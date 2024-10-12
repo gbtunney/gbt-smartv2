@@ -8,6 +8,20 @@
         "env": []
     },
     {
+        "id": "59665a456e7ac8e1",
+        "type": "tab",
+        "label": "Homebridge Dummy Devices",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cd034461aa108ae1",
+        "type": "hb-conf",
+        "username": "509-85-537",
+        "macAddress": ""
+    },
+    {
         "id": "cf55ccef154b28e6",
         "type": "change",
         "z": "2a09b151d80134a8",
@@ -96,5 +110,371 @@
         "x": 140,
         "y": 80,
         "wires": [["cf55ccef154b28e6"]]
+    },
+    {
+        "id": "98d46569a31bb524",
+        "type": "hb-event",
+        "z": "59665a456e7ac8e1",
+        "name": "Dummy dimmer",
+        "Homebridge": "homebridge",
+        "Manufacturer": "Homebridge",
+        "Service": "Lightbulb",
+        "device": "homebridge0E:AF:93:E0:FA:4CHomebridgeDummy dimmer00000043",
+        "conf": "cd034461aa108ae1",
+        "sendInitialState": true,
+        "x": 100,
+        "y": 140,
+        "wires": [["4ba0c4b7577ce356"]]
+    },
+    {
+        "id": "4c37de531b6b924a",
+        "type": "hb-event",
+        "z": "59665a456e7ac8e1",
+        "name": "Test Automation",
+        "Homebridge": "homebridge",
+        "Manufacturer": "Homebridge",
+        "Service": "Switch",
+        "device": "homebridge0E:1A:E5:4A:94:21HomebridgeTest Automation00000049",
+        "conf": "cd034461aa108ae1",
+        "sendInitialState": true,
+        "x": 100,
+        "y": 240,
+        "wires": [["4ba0c4b7577ce356"]]
+    },
+    {
+        "id": "4ba0c4b7577ce356",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "DotNode",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 180,
+        "wires": [["1668a534a79898c2"]]
+    },
+    {
+        "id": "52e7be685b0cb113",
+        "type": "debug",
+        "z": "59665a456e7ac8e1",
+        "name": "Debug Homebridge",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7c31862bd8dbaa59",
+        "type": "comment",
+        "z": "59665a456e7ac8e1",
+        "name": "Test Dummy Event Payload",
+        "info": "",
+        "x": 360,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6a6fc45afb8c2bb2",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "DotNode",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 460,
+        "wires": [["29c4a5b7f6494368"]]
+    },
+    {
+        "id": "29c4a5b7f6494368",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"On\": $number($not($boolean(msg.payload)))\t\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 460,
+        "wires": [["1e2e8e29972e59f1", "254a63c35c34623e"]]
+    },
+    {
+        "id": "1e2e8e29972e59f1",
+        "type": "debug",
+        "z": "59665a456e7ac8e1",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "1668a534a79898c2",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "convert to number",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload.On)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 240,
+        "wires": [["18203cb24e65603b"]]
+    },
+    {
+        "id": "254a63c35c34623e",
+        "type": "delay",
+        "z": "59665a456e7ac8e1",
+        "d": true,
+        "name": "1 min timer",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 300,
+        "wires": [["be3aea35685569ee"]]
+    },
+    {
+        "id": "be3aea35685569ee",
+        "type": "hb-control",
+        "z": "59665a456e7ac8e1",
+        "d": true,
+        "name": "Test Automation",
+        "Homebridge": "homebridge",
+        "Manufacturer": "Homebridge",
+        "Service": "Switch",
+        "device": "homebridge0E:1A:E5:4A:94:21HomebridgeTest Automation00000049",
+        "conf": "cd034461aa108ae1",
+        "outputs": 1,
+        "x": 1000,
+        "y": 300,
+        "wires": [["1e2e8e29972e59f1"]]
+    },
+    {
+        "id": "c79492a78b871be2",
+        "type": "inject",
+        "z": "59665a456e7ac8e1",
+        "name": "Off",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 90,
+        "y": 660,
+        "wires": [["f7ed73cb3cd815c4"]]
+    },
+    {
+        "id": "6d4985dbce6af27f",
+        "type": "inject",
+        "z": "59665a456e7ac8e1",
+        "name": "On",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 90,
+        "y": 580,
+        "wires": [["f7ed73cb3cd815c4"]]
+    },
+    {
+        "id": "f7ed73cb3cd815c4",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "DotNode",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 620,
+        "wires": [["05e683576b447ae7"]]
+    },
+    {
+        "id": "9b910f939a782b04",
+        "type": "hb-control",
+        "z": "59665a456e7ac8e1",
+        "name": "Test Automation",
+        "Homebridge": "homebridge",
+        "Manufacturer": "Homebridge",
+        "Service": "Switch",
+        "device": "homebridge0E:1A:E5:4A:94:21HomebridgeTest Automation00000049",
+        "conf": "cd034461aa108ae1",
+        "outputs": 1,
+        "x": 620,
+        "y": 620,
+        "wires": [["1e2e8e29972e59f1", "8d7dc334e6ef352b"]]
+    },
+    {
+        "id": "8f61c80bb27e480f",
+        "type": "inject",
+        "z": "59665a456e7ac8e1",
+        "name": "jjson on",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"On\":1}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 820,
+        "wires": [[]]
+    },
+    {
+        "id": "8d7dc334e6ef352b",
+        "type": "debug",
+        "z": "59665a456e7ac8e1",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "05e683576b447ae7",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "Number to json",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"On\": $number(msg.payload)\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 620,
+        "wires": [["9b910f939a782b04"]]
+    },
+    {
+        "id": "18203cb24e65603b",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "report",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$string($boolean(msg.payload))",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 60,
+        "wires": [["52e7be685b0cb113"]]
     }
 ]
