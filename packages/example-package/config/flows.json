@@ -16,10 +16,138 @@
         "env": []
     },
     {
+        "id": "29e7e6b9583511b7",
+        "type": "tab",
+        "label": "Dashboard Test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9d6753416935594f",
+        "type": "junction",
+        "z": "59665a456e7ac8e1",
+        "x": 200,
+        "y": 400,
+        "wires": [["9b6519812a79db49"]]
+    },
+    {
+        "id": "427d6b2d76d073ab",
+        "type": "junction",
+        "z": "59665a456e7ac8e1",
+        "x": 280,
+        "y": 200,
+        "wires": [["1668a534a79898c2"]]
+    },
+    {
+        "id": "0aab9a81aaf4fc17",
+        "type": "junction",
+        "z": "59665a456e7ac8e1",
+        "x": 920,
+        "y": 200,
+        "wires": [["52e7be685b0cb113"]]
+    },
+    {
+        "id": "25668e9d9b9a59fc",
+        "type": "junction",
+        "z": "59665a456e7ac8e1",
+        "x": 220,
+        "y": 100,
+        "wires": [["427d6b2d76d073ab", "4f5f829932552845"]]
+    },
+    {
+        "id": "d676df16c7855cde",
+        "type": "junction",
+        "z": "59665a456e7ac8e1",
+        "x": 600,
+        "y": 380,
+        "wires": [["05e683576b447ae7"]]
+    },
+    {
         "id": "cd034461aa108ae1",
         "type": "hb-conf",
         "username": "509-85-537",
         "macAddress": ""
+    },
+    {
+        "id": "45000a15a8a4fd2b",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": ["ui-notification", "ui-control"],
+        "showPathInSidebar": false,
+        "showPageTitle": true,
+        "navigationStyle": "default",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "c6125e8e4f2e7abd",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "5e7f0347b75046b9",
+        "type": "ui-group",
+        "name": "Gauge Group",
+        "page": "12b8536a526111eb",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "12b8536a526111eb",
+        "type": "ui-page",
+        "name": "Default Page",
+        "ui": "45000a15a8a4fd2b",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "c6125e8e4f2e7abd",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "cf55ccef154b28e6",
@@ -123,8 +251,8 @@
         "conf": "cd034461aa108ae1",
         "sendInitialState": true,
         "x": 100,
-        "y": 140,
-        "wires": [["4ba0c4b7577ce356"]]
+        "y": 100,
+        "wires": [["25668e9d9b9a59fc"]]
     },
     {
         "id": "4c37de531b6b924a",
@@ -139,30 +267,7 @@
         "sendInitialState": true,
         "x": 100,
         "y": 240,
-        "wires": [["4ba0c4b7577ce356"]]
-    },
-    {
-        "id": "4ba0c4b7577ce356",
-        "type": "change",
-        "z": "59665a456e7ac8e1",
-        "name": "DotNode",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 180,
-        "wires": [["1668a534a79898c2"]]
+        "wires": [["427d6b2d76d073ab"]]
     },
     {
         "id": "52e7be685b0cb113",
@@ -177,8 +282,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 830,
-        "y": 180,
+        "x": 1210,
+        "y": 200,
         "wires": []
     },
     {
@@ -187,70 +292,8 @@
         "z": "59665a456e7ac8e1",
         "name": "Test Dummy Event Payload",
         "info": "",
-        "x": 360,
+        "x": 420,
         "y": 140,
-        "wires": []
-    },
-    {
-        "id": "6a6fc45afb8c2bb2",
-        "type": "change",
-        "z": "59665a456e7ac8e1",
-        "name": "DotNode",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 660,
-        "y": 460,
-        "wires": [["29c4a5b7f6494368"]]
-    },
-    {
-        "id": "29c4a5b7f6494368",
-        "type": "change",
-        "z": "59665a456e7ac8e1",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t    \"On\": $number($not($boolean(msg.payload)))\t\t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 820,
-        "y": 460,
-        "wires": [["1e2e8e29972e59f1", "254a63c35c34623e"]]
-    },
-    {
-        "id": "1e2e8e29972e59f1",
-        "type": "debug",
-        "z": "59665a456e7ac8e1",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 460,
         "wires": []
     },
     {
@@ -272,47 +315,9 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
-        "y": 240,
+        "x": 390,
+        "y": 200,
         "wires": [["18203cb24e65603b"]]
-    },
-    {
-        "id": "254a63c35c34623e",
-        "type": "delay",
-        "z": "59665a456e7ac8e1",
-        "d": true,
-        "name": "1 min timer",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 810,
-        "y": 300,
-        "wires": [["be3aea35685569ee"]]
-    },
-    {
-        "id": "be3aea35685569ee",
-        "type": "hb-control",
-        "z": "59665a456e7ac8e1",
-        "d": true,
-        "name": "Test Automation",
-        "Homebridge": "homebridge",
-        "Manufacturer": "Homebridge",
-        "Service": "Switch",
-        "device": "homebridge0E:1A:E5:4A:94:21HomebridgeTest Automation00000049",
-        "conf": "cd034461aa108ae1",
-        "outputs": 1,
-        "x": 1000,
-        "y": 300,
-        "wires": [["1e2e8e29972e59f1"]]
     },
     {
         "id": "c79492a78b871be2",
@@ -332,8 +337,8 @@
         "payload": "0",
         "payloadType": "num",
         "x": 90,
-        "y": 660,
-        "wires": [["f7ed73cb3cd815c4"]]
+        "y": 440,
+        "wires": [["9d6753416935594f"]]
     },
     {
         "id": "6d4985dbce6af27f",
@@ -353,31 +358,8 @@
         "payload": "1",
         "payloadType": "num",
         "x": 90,
-        "y": 580,
-        "wires": [["f7ed73cb3cd815c4"]]
-    },
-    {
-        "id": "f7ed73cb3cd815c4",
-        "type": "change",
-        "z": "59665a456e7ac8e1",
-        "name": "DotNode",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 240,
-        "y": 620,
-        "wires": [["05e683576b447ae7"]]
+        "y": 360,
+        "wires": [["9d6753416935594f"]]
     },
     {
         "id": "9b910f939a782b04",
@@ -390,9 +372,9 @@
         "device": "homebridge0E:1A:E5:4A:94:21HomebridgeTest Automation00000049",
         "conf": "cd034461aa108ae1",
         "outputs": 1,
-        "x": 620,
-        "y": 620,
-        "wires": [["1e2e8e29972e59f1", "8d7dc334e6ef352b"]]
+        "x": 900,
+        "y": 380,
+        "wires": [["0aab9a81aaf4fc17"]]
     },
     {
         "id": "8f61c80bb27e480f",
@@ -416,22 +398,6 @@
         "wires": [[]]
     },
     {
-        "id": "8d7dc334e6ef352b",
-        "type": "debug",
-        "z": "59665a456e7ac8e1",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 710,
-        "y": 660,
-        "wires": []
-    },
-    {
         "id": "05e683576b447ae7",
         "type": "change",
         "z": "59665a456e7ac8e1",
@@ -450,8 +416,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 440,
-        "y": 620,
+        "x": 720,
+        "y": 380,
         "wires": [["9b910f939a782b04"]]
     },
     {
@@ -473,8 +439,352 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 60,
-        "wires": [["52e7be685b0cb113"]]
+        "x": 570,
+        "y": 200,
+        "wires": [["0aab9a81aaf4fc17"]]
+    },
+    {
+        "id": "32746617a8621d05",
+        "type": "comment",
+        "z": "59665a456e7ac8e1",
+        "name": "Control Test Automation",
+        "info": "",
+        "x": 350,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5dbdee7dad817dfa",
+        "type": "ui-number-input",
+        "z": "59665a456e7ac8e1",
+        "group": "5e7f0347b75046b9",
+        "name": "UI Control - Dimmer Brightness",
+        "label": "Dummy Dimmer Brightness",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "topic": "ui_change",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "tooltip": "",
+        "passthru": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "default",
+        "x": 730,
+        "y": 20,
+        "wires": [["70916bbf419efb94"]]
+    },
+    {
+        "id": "4f5f829932552845",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "convert brightness number",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload.Brightness)\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Dimmer Brightness",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 20,
+        "wires": [["5dbdee7dad817dfa"]]
+    },
+    {
+        "id": "70916bbf419efb94",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "brightness to json",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"Brightness\": $number(msg.payload),\t    \"On\": 1\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 20,
+        "wires": [["3689c45bb7fa953e", "52e7be685b0cb113"]]
+    },
+    {
+        "id": "3689c45bb7fa953e",
+        "type": "hb-control",
+        "z": "59665a456e7ac8e1",
+        "name": "Dummy dimmer",
+        "Homebridge": "homebridge",
+        "Manufacturer": "Homebridge",
+        "Service": "Lightbulb",
+        "device": "homebridge0E:AF:93:E0:FA:4CHomebridgeDummy dimmer00000043",
+        "conf": "cd034461aa108ae1",
+        "outputs": 0,
+        "x": 1200,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "54bc4e940946ccb9",
+        "type": "inject",
+        "z": "59665a456e7ac8e1",
+        "name": "Toggle",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "automation_toggle",
+        "payloadType": "global",
+        "x": 90,
+        "y": 540,
+        "wires": [["3eecbc9688820973"]]
+    },
+    {
+        "id": "81d74e12ebe780f6",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "Do the toggle",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number($not($boolean($number(msg.payload.On))))\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 580,
+        "wires": [["1b3280bb6a1e29fe"]]
+    },
+    {
+        "id": "17a53321422bf61e",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "set initial value",
+        "rules": [
+            {
+                "t": "set",
+                "p": "automation_toggle",
+                "pt": "global",
+                "to": "{\"On\":0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 480,
+        "wires": [["1b3280bb6a1e29fe"]]
+    },
+    {
+        "id": "3eecbc9688820973",
+        "type": "switch",
+        "z": "59665a456e7ac8e1",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 210,
+        "y": 540,
+        "wires": [["17a53321422bf61e"], ["81d74e12ebe780f6"]]
+    },
+    {
+        "id": "1b3280bb6a1e29fe",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "set global",
+        "rules": [
+            {
+                "t": "set",
+                "p": "automation_toggle.On",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 520,
+        "wires": [["d676df16c7855cde"]]
+    },
+    {
+        "id": "9b6519812a79db49",
+        "type": "change",
+        "z": "59665a456e7ac8e1",
+        "name": "set global",
+        "rules": [
+            {
+                "t": "set",
+                "p": "automation_toggle.On",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 380,
+        "wires": [["d676df16c7855cde"]]
+    },
+    {
+        "id": "aaa010363c285ad6",
+        "type": "ui-gauge",
+        "z": "29e7e6b9583511b7",
+        "name": "MY GAUGE",
+        "group": "5e7f0347b75046b9",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "THE GAUGE",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 190,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "1e5f9d2fa43d4370",
+        "type": "inject",
+        "z": "29e7e6b9583511b7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "40",
+        "payloadType": "num",
+        "x": 100,
+        "y": 100,
+        "wires": [["aaa010363c285ad6"]]
+    },
+    {
+        "id": "381264ef93f73c39",
+        "type": "ui-switch",
+        "z": "29e7e6b9583511b7",
+        "name": "Switch",
+        "label": "switch",
+        "group": "5e7f0347b75046b9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 190,
+        "y": 260,
+        "wires": [[]]
     }
 ]

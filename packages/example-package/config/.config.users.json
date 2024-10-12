@@ -19,7 +19,11 @@
         "debug": {
             "clearType": "all",
             "filter": "filterSelected",
-            "filteredNodes": ["d1401f20d642cb8b", "1e2e8e29972e59f1"]
+            "filteredNodes": [
+                "d1401f20d642cb8b",
+                "1e2e8e29972e59f1",
+                "b069f4cc634c1212"
+            ]
         }
     }
 }
