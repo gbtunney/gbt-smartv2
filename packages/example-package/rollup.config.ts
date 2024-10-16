@@ -70,7 +70,7 @@ const CONFIG_OBJ = [
         rollup.DEFAULT_PLUGINS_BUNDLED,
         pkg,
     ),
-    ...NRConfig.flat(),
+    //...NRConfig.flat(),
 ]
 
 //browser_default

@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "2511dc78fc26c329",
+        "type": "tab",
+        "label": "Bluetooth Scan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "9d6753416935594f",
         "type": "junction",
         "z": "59665a456e7ac8e1",
@@ -62,6 +70,14 @@
         "x": 600,
         "y": 380,
         "wires": [["05e683576b447ae7"]]
+    },
+    {
+        "id": "99b04ad80423b3e4",
+        "type": "junction",
+        "z": "2511dc78fc26c329",
+        "x": 200,
+        "y": 140,
+        "wires": [["c652a8ee5fe29ac7", "24ecda347a9263ad"]]
     },
     {
         "id": "cd034461aa108ae1",
@@ -785,6 +801,98 @@
         "offcolor": "",
         "x": 190,
         "y": 260,
+        "wires": [[]]
+    },
+    {
+        "id": "ec20d0be2fb605b8",
+        "type": "debug",
+        "z": "2511dc78fc26c329",
+        "name": "Bluetooth Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "94f3802f940baefa",
+        "type": "inject",
+        "z": "2511dc78fc26c329",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "x": 90,
+        "y": 100,
+        "wires": [["99b04ad80423b3e4"]]
+    },
+    {
+        "id": "c652a8ee5fe29ac7",
+        "type": "BLE Scanner",
+        "z": "2511dc78fc26c329",
+        "name": "BLE Scanner",
+        "searchFor": "ATC",
+        "searchForType": "Name",
+        "output": "Peripheral",
+        "outputType": "Output",
+        "x": 330,
+        "y": 140,
+        "wires": [["ec20d0be2fb605b8"]]
+    },
+    {
+        "id": "24ecda347a9263ad",
+        "type": "BLE Connect",
+        "z": "2511dc78fc26c329",
+        "name": "",
+        "subscribe": "{\"services\": [\"181a\"], \"characteristics\": []}",
+        "micro": "Arduino",
+        "x": 90,
+        "y": 260,
+        "wires": [["ec20d0be2fb605b8"]]
+    },
+    {
+        "id": "904bd9f9449c0119",
+        "type": "inject",
+        "z": "2511dc78fc26c329",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "stop",
+        "x": 90,
+        "y": 180,
+        "wires": [["99b04ad80423b3e4"]]
+    },
+    {
+        "id": "5aa077ca924b2a7f",
+        "type": "Xiaomi BLE",
+        "z": "2511dc78fc26c329",
+        "name": "ATC_913BD8",
+        "address": "",
+        "scanningTimeout": 60,
+        "x": 100,
+        "y": 340,
         "wires": [[]]
     }
 ]

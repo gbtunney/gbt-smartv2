@@ -950,5 +950,22 @@
                 "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/node-red-node-ui-table/node.js"
             }
         }
+    },
+    "node-red-contrib-generic-ble": {
+        "name": "node-red-contrib-generic-ble",
+        "version": "4.0.3",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "generic-ble": {
+                "name": "generic-ble",
+                "types": ["Generic BLE in", "Generic BLE out", "Generic BLE"],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-red-contrib-generic-ble",
+                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/node-red-contrib-generic-ble/dist/generic-ble.js"
+            }
+        }
     }
 }
