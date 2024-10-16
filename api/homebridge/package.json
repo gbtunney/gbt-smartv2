@@ -5,10 +5,12 @@
     "private": false,
     "type": "module",
     "scripts": {
+        "\n========== UI >> ==========": "",
+        "ui": "open http://192.168.64.2:8581",
         "\n========== DOCKER >> ==========": "",
         "docker:start": "pnpm docker start",
         "docker:stop": "pnpm docker stop",
-        "docker:install": "pnpm docker up",
+        "docker:install": "pnpm hack:homebridge && pnpm docker up -d",
         "docker": "pnpm exec docker compose",
         "docker:daemon": "open /Applications/Docker.app",
         "docker:sh": "pnpm exec docker exec -it homebridge ",
@@ -19,9 +21,10 @@
         "hb:stop": "pnpm hb stop",
         "hb:install": "pnpm hb install",
         "hb:uninstall": "pnpm hb uninstall",
-        "\n========== UI >> ==========": "",
-        "ui": "open localhost:8581",
-        "postinstall": "pnpm docker:daemon"
+        "\n========== LIFECYCLE >> ==========": "",
+        "postinstall": "pnpm docker:daemon",
+        "hostname": "pnpm docker:sh hostname -I",
+        "hack:homebridge": "rm -R -f api/homebridge/node_modules && echo '=== >> PNPM Hack Success:: node_modules directory deleted (homebridge uses npm)'"
     },
     "devDependencies": {
         "@0x5e/homebridge-tuya-platform": "1.7.0-beta.54",

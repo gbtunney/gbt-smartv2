@@ -6,7 +6,32 @@
         "pin": "463-29-094",
         "advertiser": "bonjour-hap"
     },
-    "accessories": [],
+    "accessories": [
+        {
+            "name": "Gillian Test Switch",
+            "stateful": true,
+            "dimmer": false,
+            "reverse": false,
+            "time": 1000,
+            "random": false,
+            "resettable": false,
+            "brightness": 0,
+            "disableLogging": false,
+            "accessory": "DummySwitch"
+        },
+        {
+            "name": "Dummy Dimmer",
+            "stateful": true,
+            "dimmer": true,
+            "reverse": false,
+            "time": 1000,
+            "random": false,
+            "resettable": false,
+            "brightness": 0,
+            "disableLogging": false,
+            "accessory": "DummySwitch"
+        }
+    ],
     "platforms": [
         {
             "name": "Config",

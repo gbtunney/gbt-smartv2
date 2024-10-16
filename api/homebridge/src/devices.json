@@ -1,0 +1,192 @@
+{
+    "devices": [
+        {
+            "activeTime": 1709850480,
+            "bindSpaceId": "187894467",
+            "category": "wk",
+            "createTime": 1704658025,
+            "name": "Test IPT-2CH V2.0",
+            "icon": "smart/icon/ay15157410971057cPZi/7938f8a1fcaea6bdb366386261505c4d.png",
+            "id": "ebf956de12e35cdf38arzm",
+            "ip": "74.77.118.11",
+            "isOnline": true,
+            "lat": "42.9500",
+            "key": "R:p4y#(;%dkR~=Ij",
+            "lon": "-78.8900",
+            "model": "",
+            "namebk": "IPT-2CH V2.0",
+            "productId": "kgimsje9a1qhqs2w",
+            "productName": "IPT-2CH V2.0",
+            "sub": false,
+            "timeZone": "-05:00",
+            "updateTime": 1709865200,
+            "uuid": "cd0e52eb288e64ff",
+            "type": "SimpleHeater"
+        },
+        {
+            "type": "Outlet",
+            "name": "Bathroom Light",
+            "id": "30727350d8f15be729d2",
+            "key": "Pi'mpVVkpn$M8s6*",
+            "ip": "74.77.118.11",
+            "model": "WP3-B美规10A（不带计量）/gosund"
+        },
+        {
+            "type": "Outlet",
+            "name": "Bedroom String Light",
+            "id": "04200484dc4f222febbd",
+            "key": "%CeTcRI?z'|>I6l7",
+            "ip": "74.77.118.11",
+            "model": "CDW.N582660-01T"
+        },
+        {
+            "type": "Outlet",
+            "name": "Living Room Light",
+            "id": "0420048468c63abf8a3f",
+            "key": "Po@TgdTH=R]Ovk8{",
+            "ip": "74.77.118.11",
+            "model": "CDW.N582660-01T"
+        },
+        {
+            "type": "Outlet",
+            "name": "Seafoam Styx",
+            "id": "60785480d8f15be5c10d",
+            "key": "=8raag>$5+w'a5IR",
+            "ip": "74.77.118.11",
+            "model": "WP3-B美规10A（不带计量）/gosund"
+        },
+        {
+            "type": "Outlet",
+            "name": "Dorn and Marceline",
+            "id": "04200484dc4f222fe88d",
+            "key": "?%%oi*In@s#g1U|)",
+            "ip": "74.77.118.11",
+            "model": "CDW.N582660-01T"
+        },
+        {
+            "type": "CustomMultiOutlet",
+            "name": "120 gallon",
+            "id": "03200121dc4f2224312d",
+            "key": "Pu#>4U!$N^]Uz'*0",
+            "ip": "74.77.118.11",
+            "model": "SM-SO301/306",
+            "outlets": [
+                {
+                    "name": "120 Lighting",
+                    "dp": 1
+                },
+                {
+                    "name": "120 Fluval Filter",
+                    "dp": 2
+                },
+                {
+                    "name": "120 Air Pump",
+                    "dp": 3
+                },
+                {
+                    "name": "120 Heater",
+                    "dp": 4
+                },
+                {
+                    "name": "120 USB",
+                    "dp": 5
+                }
+            ]
+        },
+        {
+            "type": "CustomMultiOutlet",
+            "name": "55g PICKLES",
+            "id": "11365008ecfabc8d7c22",
+            "key": "h*Z92tv^Q-a+)!D}",
+            "ip": "74.77.118.11",
+            "model": "SM-S0301",
+            "outlets": [
+                {
+                    "name": "55 Lighting",
+                    "dp": 1
+                },
+                {
+                    "name": "55 Filter",
+                    "dp": 2
+                },
+                {
+                    "name": "55 Heater",
+                    "dp": 3
+                },
+                {
+                    "name": "55 Pump",
+                    "dp": 4
+                },
+                {
+                    "name": "55 USB",
+                    "dp": 5
+                }
+            ]
+        },
+        {
+            "type": "CustomMultiOutlet",
+            "name": "20 gallon Long",
+            "id": "04200320b4e62d127be7",
+            "key": "8=FPzK)8{cxUu`0d",
+            "ip": "74.77.118.11",
+            "model": "SM-SO301/306",
+            "outlets": [
+                {
+                    "name": "20L Lighting",
+                    "dp": 1
+                },
+                {
+                    "name": "20L Filters",
+                    "dp": 2
+                },
+                {
+                    "name": "20L C02",
+                    "dp": 3
+                },
+                {
+                    "name": "20L Heater",
+                    "dp": 4
+                },
+                {
+                    "name": "20L USB",
+                    "dp": 5
+                }
+            ]
+        },
+        {
+            "type": "CustomMultiOutlet",
+            "name": "10g M Guppies",
+            "id": "04200320b4e62d129b13",
+            "key": "YQ+@5~!nk`17^&Tq",
+            "ip": "74.77.118.11",
+            "model": "SM-SO301/306",
+            "outlets": [
+                {
+                    "name": "10m Lighting",
+                    "dp": 1
+                },
+                {
+                    "name": "10m Heater",
+                    "dp": 2
+                },
+                {
+                    "name": "10m Filters",
+                    "dp": 3
+                },
+                {
+                    "name": "10m Empty",
+                    "dp": 4
+                },
+                {
+                    "name": "10m USB",
+                    "dp": 5
+                }
+            ]
+        }
+    ],
+    "_bridge": {
+        "username": "0E:AC:93:37:B9:F2",
+        "port": 50767
+    },
+    "platform": "TuyaLan"
+}
