@@ -385,23 +385,6 @@
             }
         }
     },
-    "gbt-boilerplate": {
-        "name": "gbt-boilerplate",
-        "version": "0.0.0",
-        "local": false,
-        "user": false,
-        "nodes": {
-            "transform-text": {
-                "name": "transform-text",
-                "types": [],
-                "enabled": true,
-                "local": false,
-                "user": false,
-                "module": "gbt-boilerplate",
-                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/gbt-boilerplate/dist/nodes/transform-text/transform-text.js"
-            }
-        }
-    },
     "node-red-contrib-cron-plus": {
         "name": "node-red-contrib-cron-plus",
         "version": "2.1.0",
@@ -982,6 +965,23 @@
                 "user": false,
                 "module": "node-red-contrib-bigtimer",
                 "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/node-red-contrib-bigtimer/bigtimer.js"
+            }
+        }
+    },
+    "@gbt/node-red": {
+        "name": "@gbt/node-red",
+        "version": "0.0.0",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "transform-text": {
+                "name": "transform-text",
+                "types": [],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "@gbt/node-red",
+                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/@gbt/node-red/dist/nodes/transform-text/transform-text.js"
             }
         }
     }

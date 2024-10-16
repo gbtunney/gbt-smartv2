@@ -9,8 +9,11 @@
         }
     },
     "scripts": {
-        "ui": "pnpm exec node-red -s ./dist/settings.cjs -u ./config",
-        "start": "pnpm build && pnpm ui",
+        "start": "pnpm build && pnpm exec node-red -s ./dist/settings.cjs -u ./config",
+        "\n========== UI >> ==========": "",
+        "ui": "open http://localhost:1880",
+        "\n========== DEV >> ==========": "",
+        "dev": "pnpm start",
         "\n========== BUILD >> ==========": "",
         "build": "pnpm build:ts && pnpm build:rollup",
         "build:rollup": "rollup --config ./rollup.config.js",
