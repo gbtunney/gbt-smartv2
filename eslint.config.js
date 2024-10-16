@@ -16,4 +16,10 @@ export default [
         rules: {},
     }),
     {},
+    ...tsEslint.config({
+        files: ['**/*.{ts,mts,cts,js,mjs,cts}'],
+        rules: {
+            'import/no-default-export': 'off',
+        },
+    }),
 ]
