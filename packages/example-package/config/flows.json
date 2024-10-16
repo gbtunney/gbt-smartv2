@@ -27,6 +27,22 @@
         "id": "2511dc78fc26c329",
         "type": "tab",
         "label": "Bluetooth Scan",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ded5948043b10314",
+        "type": "tab",
+        "label": "ATC Sensor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "22644c919eedb174",
+        "type": "tab",
+        "label": "iTag",
         "disabled": false,
         "info": "",
         "env": []
@@ -77,7 +93,23 @@
         "z": "2511dc78fc26c329",
         "x": 200,
         "y": 140,
-        "wires": [["c652a8ee5fe29ac7", "24ecda347a9263ad"]]
+        "wires": [["105fcb70920a4597"]]
+    },
+    {
+        "id": "b0417048521c15e9",
+        "type": "junction",
+        "z": "ded5948043b10314",
+        "x": 260,
+        "y": 140,
+        "wires": [["10d1286035f9a2fd"]]
+    },
+    {
+        "id": "c742056c664835cb",
+        "type": "junction",
+        "z": "22644c919eedb174",
+        "x": 280,
+        "y": 160,
+        "wires": [["254a6c5c85842cde"]]
     },
     {
         "id": "cd034461aa108ae1",
@@ -164,6 +196,59 @@
         "className": "",
         "visible": "true",
         "disabled": "false"
+    },
+    {
+        "id": "1242f73068d01bd8",
+        "type": "Generic BLE",
+        "localName": "iTAG  ",
+        "address": "",
+        "uuid": "035a43d438bb72b2b579a5cd8ede64da",
+        "characteristics": [
+            {
+                "uuid": "2a19",
+                "name": "Battery Level",
+                "type": "org.bluetooth.characteristic.battery_level",
+                "notifiable": true,
+                "readable": true,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2a07",
+                "name": "Tx Power Level",
+                "type": "org.bluetooth.characteristic.tx_power_level",
+                "notifiable": false,
+                "readable": true,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2a06",
+                "name": "Alert Level",
+                "type": "org.bluetooth.characteristic.alert_level",
+                "notifiable": false,
+                "readable": false,
+                "writable": true,
+                "writeWithoutResponse": true
+            },
+            {
+                "uuid": "ffe1",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": true,
+                "readable": true,
+                "writable": false,
+                "writeWithoutResponse": false
+            }
+        ]
+    },
+    {
+        "id": "f6b64cce8c92e8e4",
+        "type": "Generic BLE",
+        "localName": "ATC_913BD8",
+        "address": "",
+        "uuid": "8b4e89c046e4279121e293c0ca4bb59b",
+        "characteristics": []
     },
     {
         "id": "cf55ccef154b28e6",
@@ -841,30 +926,6 @@
         "wires": [["99b04ad80423b3e4"]]
     },
     {
-        "id": "c652a8ee5fe29ac7",
-        "type": "BLE Scanner",
-        "z": "2511dc78fc26c329",
-        "name": "BLE Scanner",
-        "searchFor": "ATC",
-        "searchForType": "Name",
-        "output": "Peripheral",
-        "outputType": "Output",
-        "x": 330,
-        "y": 140,
-        "wires": [["ec20d0be2fb605b8"]]
-    },
-    {
-        "id": "24ecda347a9263ad",
-        "type": "BLE Connect",
-        "z": "2511dc78fc26c329",
-        "name": "",
-        "subscribe": "{\"services\": [\"181a\"], \"characteristics\": []}",
-        "micro": "Arduino",
-        "x": 90,
-        "y": 260,
-        "wires": [["ec20d0be2fb605b8"]]
-    },
-    {
         "id": "904bd9f9449c0119",
         "type": "inject",
         "z": "2511dc78fc26c329",
@@ -885,14 +946,219 @@
         "wires": [["99b04ad80423b3e4"]]
     },
     {
-        "id": "5aa077ca924b2a7f",
-        "type": "Xiaomi BLE",
+        "id": "105fcb70920a4597",
+        "type": "BLE Scanner",
         "z": "2511dc78fc26c329",
-        "name": "ATC_913BD8",
-        "address": "",
-        "scanningTimeout": 60,
+        "name": "BLE Scanner",
+        "searchFor": "",
+        "searchForType": "Name",
+        "output": "Peripheral",
+        "outputType": "Output",
+        "x": 310,
+        "y": 140,
+        "wires": [["ec20d0be2fb605b8"]]
+    },
+    {
+        "id": "dd80c16f571118c7",
+        "type": "inject",
+        "z": "ded5948043b10314",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "connect",
         "x": 100,
-        "y": 340,
-        "wires": [[]]
+        "y": 80,
+        "wires": [["b0417048521c15e9"]]
+    },
+    {
+        "id": "10d1286035f9a2fd",
+        "type": "Generic BLE in",
+        "z": "ded5948043b10314",
+        "name": "",
+        "genericBle": "f6b64cce8c92e8e4",
+        "useString": false,
+        "notification": true,
+        "x": 380,
+        "y": 140,
+        "wires": [["0457357f3c0652f2"]]
+    },
+    {
+        "id": "22ebac09b676c1c9",
+        "type": "inject",
+        "z": "ded5948043b10314",
+        "name": "read",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 200,
+        "wires": [["b0417048521c15e9"]]
+    },
+    {
+        "id": "784b81436250ea80",
+        "type": "inject",
+        "z": "ded5948043b10314",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "disconnect",
+        "x": 110,
+        "y": 140,
+        "wires": [["b0417048521c15e9"]]
+    },
+    {
+        "id": "0457357f3c0652f2",
+        "type": "debug",
+        "z": "ded5948043b10314",
+        "name": "Debug ATC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "44737ccb4961b305",
+        "type": "inject",
+        "z": "22644c919eedb174",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "connect",
+        "x": 120,
+        "y": 100,
+        "wires": [["c742056c664835cb"]]
+    },
+    {
+        "id": "254a6c5c85842cde",
+        "type": "Generic BLE in",
+        "z": "22644c919eedb174",
+        "name": "iTag",
+        "genericBle": "1242f73068d01bd8",
+        "useString": false,
+        "notification": true,
+        "x": 370,
+        "y": 160,
+        "wires": [["c34584c2bedae80f"]]
+    },
+    {
+        "id": "5ec02d3f3d554d29",
+        "type": "inject",
+        "z": "22644c919eedb174",
+        "name": "read",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 240,
+        "wires": [["c742056c664835cb"]]
+    },
+    {
+        "id": "eadcff00aedc5a89",
+        "type": "inject",
+        "z": "22644c919eedb174",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "disconnect",
+        "x": 130,
+        "y": 160,
+        "wires": [["c742056c664835cb"]]
+    },
+    {
+        "id": "c34584c2bedae80f",
+        "type": "debug",
+        "z": "22644c919eedb174",
+        "name": "Debug iTag",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "77342999992bd410",
+        "type": "inject",
+        "z": "22644c919eedb174",
+        "name": "notify",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{   \"notify\": true,   \"period\": 0 }",
+        "payloadType": "str",
+        "x": 110,
+        "y": 300,
+        "wires": [["c742056c664835cb"]]
     }
 ]

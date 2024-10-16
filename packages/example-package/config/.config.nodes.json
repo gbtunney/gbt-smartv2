@@ -967,5 +967,22 @@
                 "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/node-red-contrib-generic-ble/dist/generic-ble.js"
             }
         }
+    },
+    "node-red-contrib-bigtimer": {
+        "name": "node-red-contrib-bigtimer",
+        "version": "2.8.6",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "bigtimer": {
+                "name": "bigtimer",
+                "types": ["bigtimer"],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-red-contrib-bigtimer",
+                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/node-red-contrib-bigtimer/bigtimer.js"
+            }
+        }
     }
 }
