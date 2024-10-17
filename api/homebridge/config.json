@@ -8,7 +8,7 @@
     },
     "accessories": [
         {
-            "name": "Gillian Test Switch",
+            "name": "Dummy Switch",
             "stateful": true,
             "dimmer": false,
             "reverse": false,

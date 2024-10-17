@@ -6,7 +6,7 @@
     "type": "module",
     "scripts": {
         "\n========== UI >> ==========": "",
-        "ui": "open http://192.168.64.2:8581",
+        "ui": "pnpm docker:daemon && open http://192.168.64.2:8581",
         "\n========== DOCKER >> ==========": "",
         "docker:start": "pnpm docker start",
         "docker:stop": "pnpm docker stop",
