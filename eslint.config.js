@@ -19,6 +19,7 @@ export default [
     ...tsEslint.config({
         files: ['**/*.{ts,mts,cts,js,mjs,cts}'],
         rules: {
+            '@typescript-eslint/no-this-alias': 'off',
             'import/no-default-export': 'off',
         },
     }),
