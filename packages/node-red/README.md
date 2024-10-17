@@ -60,7 +60,7 @@ $ npm install @snailicide/build-config --development
 
 -   [https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html](ATC Temperature and Humidity Graph)
 -   [Telink Flasher v8.0](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)
--
+-   [Example app for testing vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile-example)
 
 ## Examples
 
