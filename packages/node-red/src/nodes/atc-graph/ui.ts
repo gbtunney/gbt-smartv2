@@ -1,21 +1,26 @@
 import { EditorNodeProperties, EditorRED } from 'node-red'
-import { TransformTextOptions } from './index.js'
+import {
+    NODE_NAME,
+    TRANSFORM_TEXT_OPERATION,
+    TransformTextOptions,
+} from './index.js'
 
 export type TransformTextEditorNodeProperties = EditorNodeProperties &
     TransformTextOptions
 
 declare const RED: EditorRED
 const regType = (): EditorRED => {
-    RED.nodes.registerType('lower-case', {
+    RED.nodes.registerType<TransformTextEditorNodeProperties>(NODE_NAME, {
         category: 'function',
-        color: '#a6bbcf',
+        color: '#33ff82',
         defaults: {
             name: { value: '' },
+            operation: { value: TRANSFORM_TEXT_OPERATION.UpperCase },
         },
-        icon: 'transform-text.png',
+        icon: 'octicon--graph-16.svg',
         inputs: 1,
         label: function () {
-            return this.name || 'lower-case'
+            return this.name || 'atc-graph'
         },
         outputs: 1,
     })

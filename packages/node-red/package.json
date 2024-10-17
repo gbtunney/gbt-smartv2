@@ -18,10 +18,12 @@
         "dev:rollup": "rollup --watch --config ./rollup.config.js",
         "dev:vite": "pnpm exec vite --config ./vite.config.ts",
         "\n========== BUILD >> ==========": "",
-        "build": "pnpm build:ts && pnpm build:vite",
+        "build": "pnpm build:ts && pnpm build:vite:editor && pnpm build:copy",
         "build:ts": "pnpm exec tsc --build",
         "build:rollup": "rollup --config ./rollup.config.js",
         "build:vite": "pnpm exec vite build --config ./vite.config.ts",
+        "build:vite:editor": "pnpm exec vite build --config ./vite.editor.config.ts",
+        "build:copy": "pnpm exec copyfiles -u 2 ./src/nodes/**/*.{png,svg} ./dist/nodes/",
         "\n========== CLEAN >> ==========": "",
         "clean": "pnpm clean:ts && pnpm clean:build",
         "clean:ts": "pnpm exec tsc --build --clean",
@@ -87,6 +89,7 @@
         "@types/glob": "^8.1.0",
         "@types/node": "^22.7.3",
         "@types/node-red": "^1.3.5",
+        "copyfiles": "^2.4.1",
         "cross-var": "^1.1.0",
         "eslint": "^9.11.1",
         "glob": "^11.0.0",
@@ -139,5 +142,8 @@
         "commitizen": {
             "path": "@commitlint/cz-commitlint"
         }
+    },
+    "dependencies": {
+        "zod": "^3.23.8"
     }
 }
