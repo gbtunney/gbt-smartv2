@@ -1,10 +1,8 @@
-//import {Settings, NodeInitializer,Node } from "node-red";
 import { init } from 'node-red'
-// @ts-ignore: package error
 
 const projects = {
     /** To enable the Projects feature, set this value to true */
-    enabled: true,
+    enabled: false,
 
     workflow: {
         /**
