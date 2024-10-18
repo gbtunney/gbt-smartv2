@@ -1,0 +1,43 @@
+{
+    "name": "@gbt/esphome",
+    "version": "0.0.1",
+    "description": "ESPHome Idk",
+    "private": false,
+    "type": "module",
+    "scripts": {
+        "\n========== UI >> ==========": "",
+        "ui": "pnpm docker:daemon && echo 'no ui setup for esphome';",
+        "\n========== ESPHOME >> ==========": "",
+        "esphome": "pnpm run sh esphome",
+        "esphome:wizard": "pnpm run esphome wizard",
+        "\n========== DOCKER >> ==========": "",
+        "docker:start": "pnpm docker start",
+        "docker:stop": "pnpm docker stop",
+        "docker:install": "pnpm docker up",
+        "docker": "pnpm exec docker compose",
+        "docker:daemon": "open /Applications/Docker.app",
+        "docker:sh": "pnpm exec docker exec -it esphome",
+        "sh": "pnpm run docker:sh",
+        "\n========== LIFECYCLE >> ==========": "",
+        "postinstall": "pnpm docker:daemon",
+        "hostname": "pnpm docker:sh hostname -I"
+    },
+    "engines": {
+        "node": ">=18.7.0",
+        "pnpm": ">=9.0.0",
+        "docker": ">=28.2.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Gillian Tunney",
+        "email": "gbtunney@mac.com"
+    },
+    "homepage": "https://github.com/gbtunney/gbt-boilerplate",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gbtunney/gbt-boilerplate"
+    },
+    "dependencies": {
+        "esphome-native-api": "^1.0.9"
+    }
+}
