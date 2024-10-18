@@ -4,11 +4,10 @@
     "description": "Boilerplate for monorepo root",
     "scripts": {
         "\n========== BUILD >> ==========": "",
-        "build": "pnpm build:ts",
-        "build:rollup": "rollup --config ./rollup.config.js",
+        "build": "pnpm build:ts && pnpm --filter='*' build",
         "build:ts": "pnpm exec tsc --build",
         "\n========== CLEAN >> ==========": "",
-        "clean": "pnpm clean:ts",
+        "clean": "pnpm clean:ts && pnpm --filter='*' clean",
         "clean:ts": "pnpm exec tsc --build --clean",
         "\n========== TEST >> ==========": "",
         "test": "echo '\"\\n===\\n>> Unit Test:: no test specified!'",
