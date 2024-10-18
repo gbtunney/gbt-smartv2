@@ -1,0 +1,39 @@
+{
+    "_": {
+        "editor": {
+            "view": {
+                "view-store-zoom": false,
+                "view-store-position": false,
+                "view-show-grid": true,
+                "view-snap-grid": true,
+                "view-grid-size": 20,
+                "view-node-status": true,
+                "view-node-show-label": true,
+                "view-show-tips": true,
+                "view-show-welcome-tours": true
+            },
+            "tours": {
+                "welcome": "4.0.3"
+            }
+        },
+        "debug": {
+            "clearType": "all",
+            "filter": "filterAll",
+            "filteredNodes": [
+                "d1401f20d642cb8b",
+                "1e2e8e29972e59f1",
+                "b069f4cc634c1212"
+            ]
+        },
+        "git": {
+            "globalUser": {
+                "name": "Gillian Tunney",
+                "email": "gbtunney@mac.com"
+            },
+            "user": {
+                "name": "Gillian Tunney",
+                "email": "gbtunney@mac.com"
+            }
+        }
+    }
+}
