@@ -12,7 +12,7 @@ const viteSingleFileConfig: SingleFileConfig = {
 }
 
 const entryFiles = node
-    .getFilePathArr('./src/nodes/**/ui.html')
+    .getFilePathArr('./src/nodes/**/*.html')
     .map((value: FilePath) => {
         return value.absolute
     })

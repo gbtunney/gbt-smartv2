@@ -4,7 +4,7 @@ import { init } from 'node-red'
 
 const projects = {
     /** To enable the Projects feature, set this value to true */
-    enabled: false,
+    enabled: true,
 
     workflow: {
         /**
@@ -488,6 +488,13 @@ const settings: Settings = {
     /** Retry time in milliseconds for MQTT connections */
     mqttReconnectTime: 15000,
 
+    /**
+     * Node-RED scans the `nodes` directory in the userDir to find local node
+     * files. The following property can be used to specify an additional
+     * directory to scan.
+     */
+    nodesDir: './nodes',
+
     /** Retry time in milliseconds for Serial port connections */
     serialReconnectTime: 15000,
 
@@ -498,13 +505,6 @@ const settings: Settings = {
      * following would only allow connections from the local machine.
      */
     uiHost: '127.0.0.1',
-
-    /**
-     * Node-RED scans the `nodes` directory in the userDir to find local node
-     * files. The following property can be used to specify an additional
-     * directory to scan.
-     */
-    //nodesDir: '/home/nol/.node-red/nodes',
 
     /**
      * Security
