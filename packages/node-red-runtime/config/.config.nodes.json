@@ -968,29 +968,20 @@
             }
         }
     },
-    "@gbt/node-red": {
-        "name": "@gbt/node-red",
+    "node-red-contrib-gbt": {
+        "name": "node-red-contrib-gbt",
         "version": "0.0.0",
         "local": false,
         "user": false,
         "nodes": {
             "lower-case": {
                 "name": "lower-case",
-                "types": [],
+                "types": ["lower-case"],
                 "enabled": true,
                 "local": false,
                 "user": false,
-                "module": "@gbt/node-red",
-                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/@gbt/node-red/dist/nodes/lower-case/lower-case.cjs"
-            },
-            "transform-text": {
-                "name": "transform-text",
-                "types": [],
-                "enabled": true,
-                "local": false,
-                "user": false,
-                "module": "@gbt/node-red",
-                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/@gbt/node-red/dist/nodes/atc-graph/atc-graph.cjs"
+                "module": "node-red-contrib-gbt",
+                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/@gbt/node-red-contrib/lower-case.cjs"
             }
         }
     }

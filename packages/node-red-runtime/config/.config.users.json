@@ -18,12 +18,8 @@
         },
         "debug": {
             "clearType": "all",
-            "filter": "filterAll",
-            "filteredNodes": [
-                "d1401f20d642cb8b",
-                "1e2e8e29972e59f1",
-                "b069f4cc634c1212"
-            ]
+            "filter": "filterSelected",
+            "filteredNodes": ["1e2e8e29972e59f1", "b069f4cc634c1212"]
         },
         "git": {
             "globalUser": {

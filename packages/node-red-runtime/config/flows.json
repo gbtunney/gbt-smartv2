@@ -48,6 +48,14 @@
         "env": []
     },
     {
+        "id": "6a6bfc2b7f209aee",
+        "type": "tab",
+        "label": "TestFlow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "9d6753416935594f",
         "type": "junction",
         "z": "59665a456e7ac8e1",
@@ -249,6 +257,12 @@
         "address": "",
         "uuid": "8b4e89c046e4279121e293c0ca4bb59b",
         "characteristics": []
+    },
+    {
+        "id": "n1",
+        "type": "lower-case",
+        "name": "test name",
+        "active": true
     },
     {
         "id": "cf55ccef154b28e6",
@@ -1160,5 +1174,30 @@
         "x": 110,
         "y": 300,
         "wires": [["c742056c664835cb"]]
+    },
+    {
+        "id": "07839e19178a2d06",
+        "type": "inject",
+        "z": "6a6bfc2b7f209aee",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 140,
+        "wires": [[]]
     }
 ]
