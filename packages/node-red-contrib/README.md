@@ -80,3 +80,7 @@ const sampleFunc = (value: HelloWorld): HelloWorld => {
 
 -   [Linting with Type Information | typescript-eslint](https://typescript-eslint.io/getting-started/typed-linting)
 -   [How to quickly configure ESLint for import sorting | Medium](https://medium.com/@diballesteros/how-to-quickly-configure-eslint-for-import-sorting-3a4017bd4853)
+
+## TODO:
+
+-   [ ] check ui runtime folder structure

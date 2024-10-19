@@ -73,6 +73,9 @@ const nodeInit: NodeInitializer = (RED): void => {
           }*/
 
     //  RED.nodes.registerType('lowercase-text', funcLowercase)
+    console.log('THE NODE INIT!!!!!!!!!!', RED.nodes)
 }
+
+console.log('THE NODE INIT!!!!!!!!!!plain')
 
 export default nodeInit
