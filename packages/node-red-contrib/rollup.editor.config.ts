@@ -2,11 +2,11 @@
 import { rollup } from '@snailicide/build-config'
 import { stringUtils } from '@snailicide/g-library'
 import { FilePath, node } from '@snailicide/g-library/node'
-// @ts-expect-error: Could not find a declaration file for module 'rollup-plugin-bundle-inject'
 import { omit } from 'ramda'
 import { ensureArray } from 'ramda-adjunct'
 import type { RollupOptions } from 'rollup'
 import { OutputOptions } from 'rollup'
+// @ts-expect-error: Could not find a declaration file for module 'rollup-plugin-bundle-inject'
 import bundleInject from 'rollup-plugin-bundle-inject'
 import pkg from './package.json' assert { type: 'json' }
 

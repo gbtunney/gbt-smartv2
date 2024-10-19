@@ -6,7 +6,7 @@ import type { RollupOptions } from 'rollup'
 import pkg from './package.json' assert { type: 'json' }
 
 const ENTRY_FILE_PATH = './src/nodes/**/index.ts'
-const PRINT_EXPORTS: boolean = true
+const PRINT_EXPORTS: boolean = false
 
 const entryFileInfo = node.getFilePathArr(ENTRY_FILE_PATH)
 
