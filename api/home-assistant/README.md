@@ -1,6 +1,6 @@
-#ESPHome
+# ESPHome
 
-##Helpful Links
+## Helpful Links
 
 -   [homeassistant: manage local media](https://www.home-assistant.io/more-info/local-media/setup-media/)
 

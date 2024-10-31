@@ -56,7 +56,7 @@ $ yarn add @snailicide/build-config -D
 $ npm install @snailicide/build-config --development
 ```
 
-##Helpful Links
+## Helpful Links
 
 -   [https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html](ATC Temperature and Humidity Graph)
 -   [Telink Flasher v8.0](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)
