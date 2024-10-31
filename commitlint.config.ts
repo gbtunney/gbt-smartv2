@@ -10,6 +10,7 @@ const Configuration: CommitlintUserConfig = commitlint.configuration([
     'root',
     'node-red-runtime',
     'node-red-contrib',
+    'home-assistant',
     'esphome',
     'homebridge',
     'todo:fix disable scope',

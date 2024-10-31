@@ -5,29 +5,22 @@
     "private": false,
     "type": "module",
     "scripts": {
-        "\n========== OPEN >> ==========": "",
-        "open:chrome": "open -a /Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome  --url",
-        "open:atc": "pnpm open:chrome https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html",
-        "\n========== UI >> ==========": "",
-        "ui": "pnpm docker:daemon && echo 'no ui setup for home-assistant';",
-        "ssh": "ssh root@homeassistant.local -p 22222",
-        "\n========== ESPHOME >> ==========": "",
-        "open:green": "http://192.168.1.25:8123 ",
-        "ha": "pnpm run sh ha",
-        "ha:help": "pnpm run ha --help",
-        "esphome:wizard": "pnpm run ha wizard",
-        "\n========== DOCKER >> ==========": "",
-        "docker:start": "pnpm docker start",
-        "docker:stop": "pnpm docker stop",
-        "docker:install": "pnpm docker up",
-        "docker": "pnpm exec docker compose",
-        "docker:daemon": "open /Applications/Docker.app",
-        "docker:sh": "pnpm exec docker exec -it home-assistant",
-        "docker:list": "docker ps -a",
-        "sh": "pnpm run docker:sh",
-        "\n========== LIFECYCLE >> ==========": "",
-        "postinstall": "pnpm docker:daemon",
-        "hostname": "pnpm docker:sh hostname -I"
+        "\n========== HOME-ASSISTANT >> ==========": "",
+        "ui": "pnpm open:chrome http://192.168.1.25:8123",
+        "sh": "ssh -t root@homeassistant.local -p 22222",
+        "cli": "pnpm run sh ha",
+        "cli:help": "pnpm run cli --help",
+        "\n========== CLI >> ==========": "",
+        "ha:core": "pnpm cli core",
+        "ha:core:check": "pnpm ha:core check",
+        "ha:supervisor": "pnpm cli supervisor",
+        "ha:addons:help": "pnpm cli addons --help",
+        "\n========== CONTAINERS >> ==========": "",
+        "containers:list": "pnpm sh docker ps -a",
+        "containers:core:sh": "pnpm sh 'docker exec -it homeassistant'",
+        "\n========== UTILITIES >> ==========": "",
+        "hostname": "pnpm containers:core:sh hostname -i",
+        "open:chrome": "open -a /Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome  --url"
     },
     "engines": {
         "node": ">=18.7.0",
@@ -43,8 +36,5 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/gbtunney/gbt-boilerplate"
-    },
-    "dependencies": {
-        "esphome-native-api": "^1.0.9"
     }
 }
