@@ -21,6 +21,7 @@ export default [
         rules: {
             '@typescript-eslint/no-this-alias': 'off',
             'import/no-default-export': 'off',
+            'jsdoc/check-indentation': 'off',
         },
     }),
 ]
