@@ -58,8 +58,9 @@ $ npm install @snailicide/build-config --development
 
 ##Helpful Links
 
--   [https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html](ATC Temperature and Humidity Graph)
+-   [ATC Temperature and Humidity Graph](https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html)
 -   [Telink Flasher v8.0](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)
+-   [BLE iTag Button | devices.esphome.io](https://devices.esphome.io/devices/ble_itag)
 -   [Example app for testing vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile-example)
 -   [vituum/src/utils/build.js at 3348010f053da61ee33c6bc5db120bd5a4b07e3b · vituum/vituum](https://github.com/vituum/vituum/blob/3348010f053da61ee33c6bc5db120bd5a4b07e3b/src/utils/build.js#L31)
 
@@ -81,6 +82,4 @@ const sampleFunc = (value: HelloWorld): HelloWorld => {
 -   [Linting with Type Information | typescript-eslint](https://typescript-eslint.io/getting-started/typed-linting)
 -   [How to quickly configure ESLint for import sorting | Medium](https://medium.com/@diballesteros/how-to-quickly-configure-eslint-for-import-sorting-3a4017bd4853)
 
-## TODO:
-
--   [ ] check ui runtime folder structure
+## TODO
