@@ -8,11 +8,11 @@ import { commitlint /*CommitlintUserConfig*/ } from '@snailicide/build-config'
 
 const Configuration: CommitlintUserConfig = commitlint.configuration([
     'root',
+    'ha-dashboard',
     'node-red-runtime',
     'node-red-contrib',
     'home-assistant',
     'esphome',
-    'homebridge',
     'todo:fix disable scope',
 ])
 

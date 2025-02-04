@@ -9,6 +9,7 @@
         "ui": "pnpm docker:daemon && echo 'no ui setup for esphome';",
         "\n========== ESPHOME >> ==========": "",
         "esphome": "pnpm run sh esphome",
+        "esphome:help": "pnpm run esphome --help",
         "esphome:wizard": "pnpm run esphome wizard",
         "\n========== DOCKER >> ==========": "",
         "docker:start": "pnpm docker start",

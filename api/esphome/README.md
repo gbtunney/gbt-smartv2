@@ -2,10 +2,10 @@
 
 ## Helpful Links
 
--   [Getting Started with the ESPHome Command Line — ESPHome](https://esphome.io/guides/getting_started_command_line.html)
--   [Ready-Made Projects — ESPHome](https://esphome.io/projects/)
--   [BLE iTag Button | devices.esphome.io](https://devices.esphome.io/devices/ble_itag)
--   [DIY Examples — ESPHome](https://esphome.io/guides/diy)
+- [Getting Started with the ESPHome Command Line — ESPHome](https://esphome.io/guides/getting_started_command_line.html)
+- [Ready-Made Projects — ESPHome](https://esphome.io/projects/)
+- [BLE iTag Button | devices.esphome.io](https://devices.esphome.io/devices/ble_itag)
+- [DIY Examples — ESPHome](https://esphome.io/guides/diy)
 
 ```json
 { "NAME": "Gosund WP3 v2", "GPIO": [320, 0, 321, 0, 0, 0, 0, 0, 0, 32, 0, 224, 0, 0], "FLAG": 0, "BASE": 18 }
@@ -17,9 +17,9 @@
 
 ## Hallway Light
 
--   [ct-Open-Source/tuya-convert: A collection of scripts to flash Tuya IoT devices to alternative firmwares](https://github.com/ct-Open-Source/tuya-convert)
+- [ct-Open-Source/tuya-convert: A collection of scripts to flash Tuya IoT devices to alternative firmwares](https://github.com/ct-Open-Source/tuya-convert)
 
--   [Gosund WP3 Plug Configuration for Tasmota](https://templates.blakadder.com/gosund_wp3.html)
+- [Gosund WP3 Plug Configuration for Tasmota](https://templates.blakadder.com/gosund_wp3.html)
 
 ```json
 {

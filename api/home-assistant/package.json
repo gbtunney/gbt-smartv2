@@ -18,6 +18,8 @@
         "\n========== CONTAINERS >> ==========": "",
         "containers:list": "pnpm sh docker ps -a",
         "containers:core:sh": "pnpm sh 'docker exec -it homeassistant'",
+        "\n========== IMPORT DATA >> ==========": "",
+        "deploy:docs": "cross-var scp -r $npm_package_config_remote $npm_package_config_local",
         "\n========== UTILITIES >> ==========": "",
         "hostname": "pnpm containers:core:sh hostname -i",
         "open:chrome": "open -a /Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome  --url"
@@ -36,5 +38,9 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/gbtunney/gbt-boilerplate"
+    },
+    "config": {
+        "remote": "bluehost:~/public_html/docs/g-library",
+        "local": "./config/*"
     }
 }

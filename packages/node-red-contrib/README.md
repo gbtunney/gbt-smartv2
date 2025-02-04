@@ -18,16 +18,16 @@ _Provides repository with base configurations that can be extended in new packag
 
 ### Repository
 
--   **Github:** [`gbt-boilerplate`](https://github.com/gbtunney/gbt-boilerplate) •
-    [`snailicide-monorepo`](https://github.com/gbtunney/snailicide-monorepo.git)
--   **CDN**: [jsdeliver](https://cdn.jsdelivr.net/npm/gbt-boilerplate/dist/index.min.js)
+- **Github:** [`gbt-boilerplate`](https://github.com/gbtunney/gbt-boilerplate) •
+  [`snailicide-monorepo`](https://github.com/gbtunney/snailicide-monorepo.git)
+- **CDN**: [jsdeliver](https://cdn.jsdelivr.net/npm/gbt-boilerplate/dist/index.min.js)
 
 ### Author
 
 👤 **Gillian Tunney**
 
--   [github](https://github.com/gbtunney)
--   [email](mailto:gbtunney@mac.com)
+- [github](https://github.com/gbtunney)
+- [email](mailto:gbtunney@mac.com)
 
 > Recommended package manager is [pnpm](http://pnpm.io)
 >
@@ -58,11 +58,11 @@ $ npm install @snailicide/build-config --development
 
 ## Helpful Links
 
--   [ATC Temperature and Humidity Graph](https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html)
--   [Telink Flasher v8.0](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)
--   [BLE iTag Button | devices.esphome.io](https://devices.esphome.io/devices/ble_itag)
--   [Example app for testing vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile-example)
--   [vituum/src/utils/build.js at 3348010f053da61ee33c6bc5db120bd5a4b07e3b · vituum/vituum](https://github.com/vituum/vituum/blob/3348010f053da61ee33c6bc5db120bd5a4b07e3b/src/utils/build.js#L31)
+- [ATC Temperature and Humidity Graph](https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html)
+- [Telink Flasher v8.0](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)
+- [BLE iTag Button | devices.esphome.io](https://devices.esphome.io/devices/ble_itag)
+- [Example app for testing vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile-example)
+- [vituum/src/utils/build.js at 3348010f053da61ee33c6bc5db120bd5a4b07e3b · vituum/vituum](https://github.com/vituum/vituum/blob/3348010f053da61ee33c6bc5db120bd5a4b07e3b/src/utils/build.js#L31)
 
 ## Examples
 
@@ -79,7 +79,7 @@ const sampleFunc = (value: HelloWorld): HelloWorld => {
 
 ## Helpful Links
 
--   [Linting with Type Information | typescript-eslint](https://typescript-eslint.io/getting-started/typed-linting)
--   [How to quickly configure ESLint for import sorting | Medium](https://medium.com/@diballesteros/how-to-quickly-configure-eslint-for-import-sorting-3a4017bd4853)
+- [Linting with Type Information | typescript-eslint](https://typescript-eslint.io/getting-started/typed-linting)
+- [How to quickly configure ESLint for import sorting | Medium](https://medium.com/@diballesteros/how-to-quickly-configure-eslint-for-import-sorting-3a4017bd4853)
 
 ## TODO

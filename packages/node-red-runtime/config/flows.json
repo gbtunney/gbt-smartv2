@@ -27,7 +27,7 @@
         "id": "2511dc78fc26c329",
         "type": "tab",
         "label": "Bluetooth Scan",
-        "disabled": true,
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -117,7 +117,7 @@
         "z": "22644c919eedb174",
         "x": 280,
         "y": 160,
-        "wires": [["254a6c5c85842cde"]]
+        "wires": [["951bc112dd57a462"]]
     },
     {
         "id": "cd034461aa108ae1",
@@ -211,6 +211,22 @@
         "localName": "iTAG  ",
         "address": "",
         "uuid": "035a43d438bb72b2b579a5cd8ede64da",
+        "characteristics": []
+    },
+    {
+        "id": "f6b64cce8c92e8e4",
+        "type": "Generic BLE",
+        "localName": "ATC_913BD8",
+        "address": "",
+        "uuid": "8b4e89c046e4279121e293c0ca4bb59b",
+        "characteristics": []
+    },
+    {
+        "id": "922bb020f393ddc1",
+        "type": "Generic BLE",
+        "localName": "iTAG  ",
+        "address": "",
+        "uuid": "89d68b4e88fb7d24d7e058ef89bfac47",
         "characteristics": [
             {
                 "uuid": "2a19",
@@ -251,18 +267,93 @@
         ]
     },
     {
-        "id": "f6b64cce8c92e8e4",
+        "id": "99529c29ef8952e3",
         "type": "Generic BLE",
-        "localName": "ATC_913BD8",
+        "localName": "",
         "address": "",
-        "uuid": "8b4e89c046e4279121e293c0ca4bb59b",
+        "uuid": "",
         "characteristics": []
     },
     {
-        "id": "n1",
-        "type": "lower-case",
-        "name": "test name",
-        "active": true
+        "id": "ca2f3483fc842c33",
+        "type": "Generic BLE",
+        "localName": "SmartAqua_BRITE",
+        "address": "",
+        "uuid": "5ee298acb1acf7cb42ca21589d1757e9",
+        "characteristics": [
+            {
+                "uuid": "ae01",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": false,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": true
+            },
+            {
+                "uuid": "ae02",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": true,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "ae03",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": false,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": true
+            },
+            {
+                "uuid": "ae04",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": true,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "ae05",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": false,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "ae10",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": false,
+                "readable": true,
+                "writable": true,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "ae3b",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": false,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": true
+            },
+            {
+                "uuid": "ae3c",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": true,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": false
+            }
+        ]
     },
     {
         "id": "cf55ccef154b28e6",
@@ -964,9 +1055,9 @@
         "type": "BLE Scanner",
         "z": "2511dc78fc26c329",
         "name": "BLE Scanner",
-        "searchFor": "",
+        "searchFor": "iTAG",
         "searchForType": "Name",
-        "output": "Peripheral",
+        "output": "Data",
         "outputType": "Output",
         "x": 310,
         "y": 140,
@@ -997,12 +1088,12 @@
         "type": "Generic BLE in",
         "z": "ded5948043b10314",
         "name": "",
-        "genericBle": "f6b64cce8c92e8e4",
-        "useString": false,
+        "genericBle": "ca2f3483fc842c33",
+        "useString": true,
         "notification": true,
-        "x": 380,
+        "x": 390,
         "y": 140,
-        "wires": [["0457357f3c0652f2"]]
+        "wires": [["0457357f3c0652f2", "56feca799556d170"]]
     },
     {
         "id": "22ebac09b676c1c9",
@@ -1057,9 +1148,33 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 570,
+        "x": 710,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "934bec0b8f022272",
+        "type": "BLE Scanner",
+        "z": "ded5948043b10314",
+        "name": "BLE Scanner",
+        "searchFor": "",
+        "searchForType": "All",
+        "output": "Data",
+        "outputType": "Output",
+        "x": 410,
+        "y": 260,
+        "wires": [[]]
+    },
+    {
+        "id": "56feca799556d170",
+        "type": "BLE Connect",
+        "z": "ded5948043b10314",
+        "name": "",
+        "subscribe": "{\"services\": [], \"characteristics\": []}",
+        "micro": "Arduino",
+        "x": 570,
+        "y": 300,
+        "wires": [["0457357f3c0652f2"]]
     },
     {
         "id": "44737ccb4961b305",
@@ -1091,7 +1206,7 @@
         "notification": true,
         "x": 370,
         "y": 160,
-        "wires": [["c34584c2bedae80f"]]
+        "wires": [[]]
     },
     {
         "id": "5ec02d3f3d554d29",
@@ -1174,6 +1289,31 @@
         "x": 110,
         "y": 300,
         "wires": [["c742056c664835cb"]]
+    },
+    {
+        "id": "951bc112dd57a462",
+        "type": "Generic BLE in",
+        "z": "22644c919eedb174",
+        "name": "",
+        "genericBle": "922bb020f393ddc1",
+        "useString": false,
+        "notification": true,
+        "x": 470,
+        "y": 400,
+        "wires": [["c34584c2bedae80f"]]
+    },
+    {
+        "id": "7c6cb320d6cf0ee2",
+        "type": "BLE Scanner",
+        "z": "22644c919eedb174",
+        "name": "BLE Scanner",
+        "searchFor": "iTag",
+        "searchForType": "Name",
+        "output": "Peripheral",
+        "outputType": "Output",
+        "x": 270,
+        "y": 500,
+        "wires": [[]]
     },
     {
         "id": "07839e19178a2d06",

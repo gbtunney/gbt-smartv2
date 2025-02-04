@@ -968,20 +968,29 @@
             }
         }
     },
-    "node-red-contrib-gbt": {
-        "name": "node-red-contrib-gbt",
+    "@gbt/node-red-contrib": {
+        "name": "@gbt/node-red-contrib",
         "version": "0.0.0",
         "local": false,
         "user": false,
         "nodes": {
             "lower-case": {
                 "name": "lower-case",
-                "types": ["lower-case"],
+                "types": [],
                 "enabled": true,
                 "local": false,
                 "user": false,
-                "module": "node-red-contrib-gbt",
-                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/@gbt/node-red-contrib/lower-case.cjs"
+                "module": "@gbt/node-red-contrib",
+                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/@gbt/node-red-contrib/dist/nodes/lower-case/lower-case.cjs"
+            },
+            "atc-graph": {
+                "name": "atc-graph",
+                "types": [],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "@gbt/node-red-contrib",
+                "file": "/Users/gilliantunney/gh_repos/SNAILICIDE/BRANDNEW/smart/gbt-smartv2/node_modules/.pnpm/node_modules/@gbt/node-red-contrib/dist/nodes/atc-graph/atc-graph.cjs"
             }
         }
     }

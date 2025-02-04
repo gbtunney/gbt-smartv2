@@ -157,3 +157,5 @@ dist
 # Scratch Files
 scratch
 examples
+/.esphome/
+/secrets.yaml
