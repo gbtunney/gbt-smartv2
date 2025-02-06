@@ -9,32 +9,33 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "prettier": "prettier --write .",
-        "sync": "npx tsx ./sync-types.ts",
+        "sync": "pnpm exec tsx ./sync-types.ts",
         "prebuild": "npm run prettier",
-        "deploy": "npx tsx scripts/deploy.ts"
+        "deploy": "pnpm exec scripts/deploy.ts"
     },
     "dependencies": {
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
+        "@hakit/components": "^5.0.2",
         "@hakit/core": "^5.0.2",
-        "@hakit/components": "^5.0.2"
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     },
     "devDependencies": {
         "@eslint/js": "^9.17.0",
+        "@types/node": "^22.13.1",
         "@types/react": "^19.0.8",
         "@types/react-dom": "^19.0.3",
         "@vitejs/plugin-react": "^4.3.4",
+        "chalk": "^5.4.1",
+        "dotenv": "^16.4.7",
         "eslint": "^9.17.0",
         "eslint-plugin-react-hooks": "^5.0.0",
         "eslint-plugin-react-refresh": "^0.4.16",
         "globals": "^15.14.0",
+        "node-scp": "^0.0.23",
+        "prettier": "^3.4.2",
+        "tsx": "^4.19.2",
         "typescript": "~5.6.2",
         "typescript-eslint": "^8.18.2",
-        "vite": "^6.0.5",
-        "prettier": "^3.4.2",
-        "dotenv": "^16.4.7",
-        "@types/node": "^22.13.1",
-        "node-scp": "^0.0.23",
-        "chalk": "^5.4.1"
+        "vite": "^6.0.5"
     }
 }

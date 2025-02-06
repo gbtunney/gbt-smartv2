@@ -3,11 +3,14 @@ import * as dotenv from 'dotenv'
 import { Client } from 'node-scp'
 import { access, constants } from 'fs/promises'
 import { join } from 'path'
+import fs from 'node:fs'
+import type { PathOrFileDescriptor } from 'node:fs'
 dotenv.config()
 
 const HA_URL = process.env.VITE_HA_URL
 const USERNAME = process.env.VITE_SSH_USERNAME
-const PASSWORD = process.env.VITE_SSH_PASSWORD
+const PASSPHRASE = process.env.VITE_PASSPHRASE
+const PRIVATE_KEY = process.env.VITE_PRIVATE_KEY
 const HOST_OR_IP_ADDRESS = process.env.VITE_SSH_HOSTNAME
 const PORT = 22
 const REMOTE_FOLDER_NAME = process.env.VITE_FOLDER_NAME
@@ -34,9 +37,6 @@ async function deploy() {
         if (!USERNAME) {
             throw new Error('Missing VITE_SSH_USERNAME in .env file')
         }
-        if (!PASSWORD) {
-            throw new Error('Missing VITE_SSH_PASSWORD in .env file')
-        }
         if (!HOST_OR_IP_ADDRESS) {
             throw new Error('Missing VITE_SSH_HOSTNAME in .env file')
         }
@@ -48,9 +48,10 @@ async function deploy() {
         }
         const client = await Client({
             host: HOST_OR_IP_ADDRESS,
-            password: PASSWORD,
             port: PORT,
             username: USERNAME,
+            privateKey: fs.readFileSync(PRIVATE_KEY as PathOrFileDescriptor),
+            passphrase: PASSPHRASE,
         })
         // seems somewhere along the lines, home assistant decided to rename the config directory to homeassistant...
         const directories = ['config', 'homeassistant']
