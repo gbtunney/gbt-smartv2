@@ -20,7 +20,6 @@
         "docker:sh": "pnpm exec docker exec -it esphome",
         "sh": "pnpm run docker:sh",
         "\n========== LIFECYCLE >> ==========": "",
-        "postinstall": "pnpm docker:daemon",
         "hostname": "pnpm docker:sh hostname -I"
     },
     "engines": {
