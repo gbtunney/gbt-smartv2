@@ -19,6 +19,5 @@ interface ImportMeta {
 // For Node's process.env
 declare global {
   namespace NodeJS {
-    interface ProcessEnv extends CustomEnv {}
   }
 }
