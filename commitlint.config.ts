@@ -12,6 +12,7 @@ const Configuration: CommitlintUserConfig = commitlint.configuration([
     'node-red-runtime',
     'home-assistant',
     'esphome',
+    'openai',
     'todo:fix disable scope',
 ])
 
