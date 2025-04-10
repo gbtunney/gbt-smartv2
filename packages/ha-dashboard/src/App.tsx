@@ -25,7 +25,7 @@ function App() {
       </div>
       <h1 className='bg-#282c34 min-h-100vh flex flex-col items-center justify-center color-white'>Vite + React</h1>
         <HassConnect hassUrl={import.meta.env.VITE_HA_URL} hassToken={import.meta.env.VITE_HA_TOKEN}>
-            <ThemeProvider includeThemeControls />
+            <ThemeProvider/>
             <Button onClick={() => setOpen(!open)}>{word}</Button>
             <Drawer open={open}  onClose={() => setOpen(!open)}>
                 <div>HELLO</div>

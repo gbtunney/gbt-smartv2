@@ -15,15 +15,24 @@ docker run -d --name="home-assistant" \
     -v /PATH_TO_YOUR_MEDIA:/media \
     -v /etc/localtime:/etc/localtime:ro \
     --net=host \
-    ghcr.io/home-assistant/home-assistant:stable
+    s ghcr.io/home-assistant/home-assistant:stable
 ```
 
+## fix for busted home assistant things
+
+````shell
+docker pull  docker pull ghcr.io/esphome/esphome-hassio:2024.10.1
+# get the name of pulled image
+ docker image ls -l
+ # save the image and upload via ssh
+docker save ghcr.io/esphome/esphome-hassio  |  ssh -C root@homeassistant.local -p 22222  docker load
+``
 ```shell
 pnpm --filter=@gbt/esphome esphome dashboard --username gbtunney --password meddle11 --open-ui --address http://192.168.64.2/ --port 6052 testy.yaml
 
 #compile
 pnpm --filter=@gbt/esphome esphome compile testy.yaml
-```
+````
 
 ```sh
 scp -P 2222 /absolute_path/source-folder/some-file root@homeassistant.local:/absolute_path/destination-folder
