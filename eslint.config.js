@@ -8,7 +8,13 @@ const FLAT_CONFIG = await EsLint.flatConfig(__dirname)
 export default [
     ...FLAT_CONFIG,
     {
-        ignores: ['**/.history/**', '**/*.map'],
+        ignores: [
+            '**/.history/**',
+            '**/*.map',
+            '**/npm_node_modules/**',
+            '**/scratch/**',
+            'packages/ha-dashboard/**',
+        ],
     },
     ...tsEslint.config({
         extends: [tsEslint.configs.disableTypeChecked],
@@ -16,4 +22,12 @@ export default [
         rules: {},
     }),
     {},
+    ...tsEslint.config({
+        files: ['**/*.{ts,mts,cts,js,mjs,cts}'],
+        rules: {
+            '@typescript-eslint/no-this-alias': 'off',
+            'import/no-default-export': 'off',
+            'jsdoc/check-indentation': 'off',
+        },
+    }),
 ]

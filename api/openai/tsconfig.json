@@ -4,7 +4,7 @@
         "rootDir": ".",
         "types": ["node"]
     },
-    "files": [".markdownlint-cli2.mts"],
     "exclude": ["./node_modules"],
-    "include": ["./*.ts", "./*.mts", "./*.cts"]
+    "include": ["./*.ts", "./*.mts", "./*.cts", "./*.json"],
+    "references": [{ "path": "./src" }]
 }

@@ -56,18 +56,12 @@ $ yarn add @snailicide/build-config -D
 $ npm install @snailicide/build-config --development
 ```
 
-_**OR:**_
+## Helpful Links
 
-```shell
-# install in workspace
-git clone https://github.com/gbtunney/gbt-boilerplate.git ./packages/gbt-boilerplate
-rm -rf ./packages/gbt-boilerplate/.git
-pnpm install
-
-# run delete files script
-pnpm --filter=gbt-boilerplate build:ts
-pnpm --filter=gbt-boilerplate exec node ./workspace.mjs
-```
+- [https://pvvx.github.io/ATC_MiThermometer/GraphAtc.html](ATC Temperature and Humidity Graph)
+- [Telink Flasher v8.0](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)
+- [Example app for testing vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile-example)
+- [vituum/src/utils/build.js at 3348010f053da61ee33c6bc5db120bd5a4b07e3b · vituum/vituum](https://github.com/vituum/vituum/blob/3348010f053da61ee33c6bc5db120bd5a4b07e3b/src/utils/build.js#L31)
 
 ## Examples
 
